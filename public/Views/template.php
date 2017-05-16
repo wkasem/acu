@@ -7,13 +7,24 @@
       <?php include('includes/assets.php'); ?>
   </head>
   <body>
-    <?php include('includes/nav.php'); ?>
+    <section class="hero is-success is-fullheight">
+      <!-- Hero header: will stick at the top -->
+      <?php include('includes/header.php') ?>
 
-      <div class="container">
-
-
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            Title
+          </h1>
+          <h2 class="subtitle">
+            Subtitle
+          </h2>
+        </div>
       </div>
 
+      <!-- Hero footer: will stick at the bottom -->
     <?php include('includes/footer.php') ?>
+    </section>
   </body>
 </html>
