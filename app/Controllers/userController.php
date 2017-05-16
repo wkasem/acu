@@ -49,10 +49,8 @@ class userController extends Controller
         return Auth::login($_POST);
     }
     public function EditUser()
-    {
-        session_start();
-        
-        User::update($_SESSION['user']->id ,[
+    {        
+        User::update($_GET['id'] ,[
             'role' => $_GET['role']
         ]);
         redirect('dashboard');
