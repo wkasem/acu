@@ -16,7 +16,7 @@
         <div class="container">
           
             <div class="card">
-                <form action="/login" method="post">
+                <form action="login" method="post">
               <div class="card-content">
                   <div class="field">
                   <label class="label">Email</label>

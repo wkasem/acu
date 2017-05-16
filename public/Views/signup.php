@@ -16,7 +16,7 @@
         <div class="container">
           
             <div class="card">
-                <form action="/signup" method="post">
+                <form action="signup" method="post">
               <div class="card-content">                  
                   <div class="field">
                 <label class="label">Name</label>
@@ -60,7 +60,7 @@
                   <div class="field">
                   <label class="label">Adress</label>
                   <p class="control has-icons-left has-icons-right">
-                    <input class="input is-success" type="text" placeholder="Adress" name="Adress" value="" required>
+                    <input class="input is-success" type="text" placeholder="Adress" name="Address" value="" required>
                     <span class="icon is-small is-left">
                       <i class="fa fa-envelope"></i>
                     </span>
@@ -70,7 +70,7 @@
               <label class="label">City</label>
               <p class="control">
                 <span class="select">
-                  <select required>
+                  <select name="CityId" required>
                       <option value=""></option>
                       <?php
                       foreach ($cities as $city) {

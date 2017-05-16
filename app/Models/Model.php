@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/../Modules/Auth.php';
+require_once __DIR__.'/../Modules/Auth.php';
 
 class Model
 {

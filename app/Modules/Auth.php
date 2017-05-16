@@ -1,6 +1,6 @@
 <?php
 
-require 'helpers.php';
+require_once 'helpers.php';
 
 class Auth
 {
@@ -10,12 +10,30 @@ class Auth
     session_start();
   }
 
-  public static function login($user)
+  public static function login($data)
   {
+    $user = User::find([
+        'email' => $data['Email']
+    ])[0];
+      
+ 
+    
+    if(count($user)){
+        if(password_verify( $data['Password'] , $user->password )){
+            
+                $_SESSION['user'] = $user;
 
-    $_SESSION['user'] = $user;
+                redirect('dashboard');
+            
+        }else{
+           redirect('login');
 
-    redirect('registraion');
+        }
+    }else{
+           redirect('login');
+
+    }
+
   }
 
   public function logout()

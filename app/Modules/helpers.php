@@ -1,9 +1,10 @@
-<?php
+<?php 
 
 function redirect($to)
 {
+ 
+  $to = '/acu/'.$to;
 
-  $to = 'http://acu.dev/'.$to;
-
-  header("Location: $to");
+  header("Location: ".$to);
+  exit;
 }
