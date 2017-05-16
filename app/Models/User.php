@@ -6,6 +6,7 @@ class User extends Model
 {
 
   protected  $table = 'user';
+    
     public static function all()
    {
     $instance = new static;

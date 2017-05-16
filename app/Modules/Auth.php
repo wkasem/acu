@@ -5,10 +5,6 @@ require_once 'helpers.php';
 class Auth
 {
 
-  public function __construct()
-  {
-    session_start();
-  }
 
   public static function login($data)
   {
@@ -20,10 +16,11 @@ class Auth
     
     if(count($user)){
         if(password_verify( $data['Password'] , $user->password )){
+                session_start();
             
                 $_SESSION['user'] = $user;
-
-                redirect('users');
+               
+                redirect(($user->role) ? 'dashboard' : 'orders');
             
         }else{
            redirect('login');

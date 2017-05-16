@@ -55,13 +55,13 @@
                       if($user->role==0)
                       {
                         echo '<th>'.'User'.'</th>';
-                      echo '<th><a href="/acu/edituser?id='.$user->id.'" class="button is-success">Make Admin</a></th>';
+                      echo '<th><a href="/acu/edituser?id='.$user->id.'&role=1" class="button is-success">Make Admin</a></th>';
                       
                       }
                       else if ($user->role==1)
                       {
                           echo '<th>'.'Admin'.'</th>';
-                      echo '<th><a href="/acu/edituser?id='.$user->id.'" class="button is-success">Remove Admin</a></th>';
+                      echo '<th><a href="/acu/edituser?id='.$user->id.'&role=0" class="button is-success">Remove Admin</a></th>';
                       
                       }
                       echo '</tr>';

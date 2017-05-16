@@ -38,6 +38,11 @@ class userController extends Controller
         return $this->view('public.Views.login');
     }
     
+    public function showOrders()
+    {
+        return $this->view('public.Views.orders');
+    }
+    
     public function login()
     {
         
@@ -45,7 +50,12 @@ class userController extends Controller
     }
     public function EditUser()
     {
-        redirect('users');
+        session_start();
+        
+        User::update($_SESSION['user']->id ,[
+            'role' => $_GET['role']
+        ]);
+        redirect('dashboard');
     }
 
 

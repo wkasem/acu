@@ -88,6 +88,25 @@ class Model
     $instance->stream->query("DELETE FROM {$instance->table} WHERE {$queryStr}");
 
   }
+    
+  public static function update(string $id , array $data)
+  {
+
+    $instance = new static;
+      
+    $queryStr = '';
+
+    foreach($data as $key => $value){
+      $queryStr .= "{$key} = '{$value}' , ";
+    }
+
+    //remove last ,
+    $queryStr = substr($queryStr,0 , strripos($queryStr , ','));
+
+
+    $instance->stream->query("UPDATE {$instance->table} SET {$queryStr} WHERE id = {$id} ");
+
+  }
 
   public static function count(array $find)
   {
