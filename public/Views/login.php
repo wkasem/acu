@@ -2,44 +2,56 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Signup</title>
 
       <?php include('includes/assets.php'); ?>
   </head>
   <body>
-    <?php include('includes/nav.php'); ?>
+    <section class="hero is-warning is-bold is-fullheight">
+      <!-- Hero header: will stick at the top -->
+      <?php include('includes/header.php') ?>
 
-      <div class="container">
-
-        <div class="row">
-          <div class="col m6 push-m2 s12 m7">
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container">
+          
             <div class="card">
+                <form action="/login" method="post">
               <div class="card-content">
-                  <div class="row">
-                    <form action="login" method="post" class="col s12">
-                      <div class="row">
-                        <div class="input-field col l12 s6">
-                          <input id="email" type="text" class="validate" name="email">
-                          <label for="email">Email</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col l12 s6">
-                          <input id="password" type="password" class="validate" name="password">
-                          <label for="password">password</label>
-                        </div>
-                      </div>
-                   </div>
-              </div>
-              <div class="card-action">
-                <button class="btn">Login</button>
+                  <div class="field">
+                  <label class="label">Email</label>
+                  <p class="control has-icons-left has-icons-right">
+                    <input class="input is-success" required type="Email" placeholder="Email" name="Email" value="">
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </p>
+                  
+                </div>
+                  <div class="field">
+                  <label class="label">Password</label>
+                  <p class="control has-icons-left has-icons-right">
+                    <input class="input is-success" type="Password" required placeholder="Password" name="Password" value="">
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </p>
+                </div>
+                  <div class="field is-grouped">
+                  <p class="control">
+                    <button class="button is-primary">Submit</button>
+                  </p>
+                </div>
+
               </div>
             </form>
-            </div>
-          </div>
+                    </div>
+            
         </div>
-
       </div>
 
+      <!-- Hero footer: will stick at the bottom -->
+    <?php include('includes/footer.php') ?>
+    </section>
   </body>
 </html>

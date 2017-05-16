@@ -10,5 +10,9 @@ class userController extends Controller
         $cities = City::all();
         
         return $this->view('public.Views.signup' , compact('cities'));
-    } 
+    }
+    public function showlogin()
+    {
+        return $this->view('public.Views.login');
+    }
 }
