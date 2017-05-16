@@ -24,8 +24,9 @@
           <th><abbr title="Address">Address</abbr></th>
           <th><abbr title="City">City</abbr></th>
           <th><abbr title="Role">Role</abbr></th>
+          <th><abbr title="Make">Make Admin</abbr></th>
+        
         </tr>
-          
       </thead>
               <tfoot>
               <tr>
@@ -36,6 +37,7 @@
           <th><abbr title="Address">Address</abbr></th>
           <th><abbr title="City">City</abbr></th>
           <th><abbr title="Role">Role</abbr></th>
+          <th></th>
         </tr>
           </tfoot>
               <tbody>
@@ -53,10 +55,14 @@
                       if($user->role==0)
                       {
                         echo '<th>'.'User'.'</th>';
+                      echo '<th><a href="/acu/edituser?id='.$user->id.'" class="button is-success">Make Admin</a></th>';
+                      
                       }
                       else if ($user->role==1)
                       {
                           echo '<th>'.'Admin'.'</th>';
+                      echo '<th><a href="/acu/edituser?id='.$user->id.'" class="button is-success">Remove Admin</a></th>';
+                      
                       }
                       echo '</tr>';
                   }

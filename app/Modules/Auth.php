@@ -23,7 +23,7 @@ class Auth
             
                 $_SESSION['user'] = $user;
 
-                redirect('dashboard');
+                redirect('users');
             
         }else{
            redirect('login');

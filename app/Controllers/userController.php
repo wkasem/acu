@@ -43,6 +43,10 @@ class userController extends Controller
         
         return Auth::login($_POST);
     }
+    public function EditUser()
+    {
+        redirect('users');
+    }
 
 
 }
