@@ -11,8 +11,6 @@ class Controller
     foreach ($with as $key => $value) {
       $$key = $value;
     }
-
     require $path;
   }
-
 }
