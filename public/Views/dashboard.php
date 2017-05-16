@@ -14,7 +14,55 @@
       <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
+          <table class="table">
+      <thead>
+        <tr>
+          <th><abbr title="id">ID</abbr></th>
+          <th>Name</th>
+          <th><abbr title="Email">Email</abbr></th>
+          <th><abbr title="PhoneNumber">Phone Number</abbr></th>
+          <th><abbr title="Address">Address</abbr></th>
+          <th><abbr title="City">City</abbr></th>
+          <th><abbr title="Role">Role</abbr></th>
+        </tr>
           
+      </thead>
+              <tfoot>
+              <tr>
+          <th><abbr title="id">ID</abbr></th>
+          <th>Name</th>
+          <th><abbr title="Email">Email</abbr></th>
+          <th><abbr title="PhoneNumber">Phone Number</abbr></th>
+          <th><abbr title="Address">Address</abbr></th>
+          <th><abbr title="City">City</abbr></th>
+          <th><abbr title="Role">Role</abbr></th>
+        </tr>
+          </tfoot>
+              <tbody>
+              
+        <?php
+                  foreach($Users as $user)
+                  {
+                      echo '<tr>';
+                      echo '<th>'.$user->id.'</th>';
+                      echo '<th>'.$user->name.'</th>';
+                      echo '<th>'.$user->email.'</th>';
+                      echo '<th>'.$user->phonenumber.'</th>';
+                      echo '<th>'.$user->address.'</th>';
+                      echo '<th>'.$user->cityname.'</th>';
+                      if($user->role==0)
+                      {
+                        echo '<th>'.'User'.'</th>';
+                      }
+                      else if ($user->role==1)
+                      {
+                          echo '<th>'.'Admin'.'</th>';
+                      }
+                      echo '</tr>';
+                  }
+                  ?>          
+              </tbody>
+            </table>
         </div>
       </div>
 

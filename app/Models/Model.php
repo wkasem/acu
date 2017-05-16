@@ -7,7 +7,7 @@ class Model
 
   protected $primaryKey = 'id';
 
-  private $stream;
+  protected $stream;
 
   public function __construct()
   {
