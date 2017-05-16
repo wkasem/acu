@@ -7,7 +7,7 @@
       <?php include('includes/assets.php'); ?>
   </head>
   <body>
-    <section class="hero is-success is-fullheight">
+    <section class="hero is-warning is-bold is-fullheight">
       <!-- Hero header: will stick at the top -->
       <?php include('includes/header.php') ?>
 
