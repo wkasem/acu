@@ -85,7 +85,13 @@
               <p class="control">
                 <span class="select">
                   <select>
+                      <option value=""></option>
+                      <?php
                       
+                      foreach ($cities as $city) {
+                        echo '<option value='.$city->idcity.'>'.$city->cityname.'</option>';
+                      }
+                      ?>
                   </select>
                 </span>
               </p>
