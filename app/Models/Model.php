@@ -13,7 +13,7 @@ class Model
   {
 
     try{
-      $this->stream = new PDO('mysql:host=127.0.0.1;dbname=acu','homestead','secret');
+      $this->stream = new PDO('mysql:host=127.0.0.1;dbname=acu','root','');
       $this->stream->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);
       $this->stream->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     } catch(PDOException $e){
@@ -21,9 +21,11 @@ class Model
     }
   }
 
-  public function find(array $find)
+  public static function find(array $find)
   {
-
+    
+    $instance = new static;
+      
     if(!count($find)) return false;
 
     $queryStr = '';
@@ -35,15 +37,27 @@ class Model
     //remove last AND
     $queryStr = substr($queryStr,0 , strripos($queryStr , 'AND'));
 
-    $data = $this->stream->query("SELECT * FROM {$this->table} WHERE {$queryStr}");
+    $data = $instance->stream->query("SELECT * FROM {$instance->table} WHERE {$queryStr}");
 
     return $data->fetchAll();
 
   }
-
-  public function create(array $data)
+    
+  public static function all()
   {
 
+    $instance = new static;
+      
+    $data = $instance->stream->query("SELECT * FROM {$instance->table}");
+
+    return $data->fetchAll();
+  }
+
+  public static function create(array $data)
+  {
+
+      $instance = new static;
+      
        if(array_key_exists('password' , $data)){
          $data['password'] = password_hash($data['password'],PASSWORD_DEFAULT);
        }
@@ -52,13 +66,15 @@ class Model
 
        $values = implode(array_values($data) , "','");
 
-       $this->stream->query("INSERT INTO {$this->table}($into) VALUES ('$values')");
+       $instance->stream->query("INSERT INTO {$instance->table}($into) VALUES ('$values')");
 
   }
 
-  public function delete(array $by)
+  public static function delete(array $by)
   {
 
+    $instance = new static;
+      
     $queryStr = '';
 
     foreach($by as $key => $value){
@@ -69,13 +85,14 @@ class Model
     $queryStr = substr($queryStr,0 , strripos($queryStr , 'AND'));
 
 
-    $this->stream->query("DELETE FROM {$this->table} WHERE {$queryStr}");
+    $instance->stream->query("DELETE FROM {$instance->table} WHERE {$queryStr}");
 
   }
 
-  public function count(array $find)
+  public static function count(array $find)
   {
-
+    $instance = new static;
+      
     if(!count($find)) return false;
 
     $queryStr = '';
@@ -87,7 +104,7 @@ class Model
     //remove last AND
     $queryStr = substr($queryStr,0 , strripos($queryStr , 'AND'));
 
-    $data = $this->stream->query("SELECT * FROM {$this->table} WHERE {$queryStr}");
+    $data = $instance->stream->query("SELECT * FROM {$instance->table} WHERE {$queryStr}");
 
     return $data->fetchColumn();
 
