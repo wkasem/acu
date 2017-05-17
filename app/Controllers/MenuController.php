@@ -5,9 +5,9 @@ require __DIR__.'/../Models/Menu.php';
 
 class MenuController extends Controller
 {
-   public function ShowUsers()
+   public function ShowMenu()
     {
-        $Menu = Menu::all();
-        return $this->view('public.Views.dashboard' , compact('Menu'));
+        $Menu = Menu::find(["id" => $_GET['id']]);
+        return $this->view('public.Views.menuAdmin' , compact('Menu'));
     }
 }

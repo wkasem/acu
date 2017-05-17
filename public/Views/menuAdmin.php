@@ -23,7 +23,7 @@
               <th> Description</th>
               <th> Price</th>
               <th> Category</th>
-              <th> extra</th>
+              <th> type</th>
 
             </tr>
           </thead>
@@ -34,27 +34,38 @@
                   <th> Description</th>
                   <th> Price</th>
                   <th> Category</th>
-                  <th> extra</th>
+                  <th> type</th>
 
                 </tr>
             </tfoot>
                 
      <tbody>
-    <tr>
-      <th>1</th>
-      <td>Leicester City</td>
-      <td>38</td>
-      <td>23</td>
-      <td>12</td>
       
-      </tr> 
+        <?php
+                  foreach($Menu as $m)
+                  {
+                      echo '<tr>';
+                      echo '<th>'.$m->name.'</th>';
+                      echo '<th>'.$m->discription.'</th>';
+                      echo '<th>'.$m->price.'</th>';
+                      echo '<th>'.$m->cname.'</th>';
+                      if($m->extra==1)
+                      {
+                          echo '<th>Extra</th>';
+                      }
+                      else
+                      {
+                          echo '<th>Meal</th>';
+                      }
+                      echo '</tr>';
+                  }
+                  ?>
+       
                 </tbody>
             </table>
-            <div class="field is-grouped">
-  <p class="control">
-    <button class="button is-primary">Addmeal</button>
-  </p>
-</div>
+            <?php
+            $w = $_GET['id'];
+            echo '<a href="addmeal?id='.$w.'" class="button is-success">Add meal</a>';?>
           </div>  
       </div>
         

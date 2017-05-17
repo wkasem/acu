@@ -21,4 +21,7 @@ $router->get('/editres',['controller' => 'restaurantsController' , 'func' => 'ed
 $router->get('/addrest',['controller' => 'restaurantsController' , 'func' => 'showaddresturant']);
 $router->post('/editres',['controller' => 'restaurantsController' , 'func' => 'updateresturant']);
 $router->post('/addrest',['controller' => 'restaurantsController' , 'func' => 'addresturant']);
+$router->get('/menuadmin',['controller' => 'MenuController', 'func'=> 'ShowMenu'] );
+$router->get('/addmeal',['controller' => 'MealController', 'func'=> 'addmeal']);
+$router->post('/addcat',['controller' => 'CategoryController', 'func'=> 'addcat']);
 $router->init();
