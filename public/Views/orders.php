@@ -29,7 +29,7 @@
            
             $('#city').change(function(){
                
-               var id = ($(this).val();
+               var id = $(this).val();
                
                $(this).parent().addClass('is-loading');
  
