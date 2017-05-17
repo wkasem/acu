@@ -38,11 +38,16 @@
                    $('#res').empty().parent().show();
                    $('#ress').empty().parent().show();
                    $(this).parent().removeClass('is-loading');
+                   $('#menue').show();
                    data.forEach(function(c){
                       $('#res').append(`<option value='${c.idresurant}'><a>${c.nameresturant}</a></option>`);
                        
                    });
                });
+           });
+           
+           $('#menue button').click(function(){
+              window.location = 'orders/' + $('#res').val(); 
            });
        })
       </script>
@@ -81,6 +86,9 @@
                 </span>
               </p><p class="control" style="display:none">
                   
+              </p>
+             <p class="control" id="menue" style="display:none">
+                <button class="button is-medium is-success">Show Menue</button>
               </p>
            </div>
 
