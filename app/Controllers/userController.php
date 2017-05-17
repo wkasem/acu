@@ -29,10 +29,9 @@ class userController extends Controller
             'cityid'      => $_POST['CityId'],
             'role'        => 0
         ]);
-        
         redirect('login');
     }
-    
+
     public function showlogin()
     {
         return $this->view('public.Views.login');
@@ -53,7 +52,7 @@ class userController extends Controller
         User::update($_GET['id'] ,[
             'role' => $_GET['role']
         ]);
-        redirect('dashboard');
+        redirect('users');
     }
 
 

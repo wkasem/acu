@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Signup</title>
+    <title>Login</title>
 
       <?php include('includes/assets.php'); ?>
   </head>
@@ -13,37 +13,16 @@
 
       <!-- Hero content: will be in the middle -->
       <div class="hero-body">
-        <div class="container">
-          
-            <div class="card">
-                <form action="signup" method="post">
+        <div class="container has-text-centered">
+             <form action="addrest" method="post" >
               <div class="card-content">                  
                   <div class="field">
                 <label class="label">Name</label>
                   <p class="control has-icons-left has-icons-right">
-                    <input class="input is-success" type="text" required placeholder="Name" name="Name" value="">
+                      
+            <input class="input is-success" type="text" required placeholder="Name" name="Name" value="">
                     <span class="icon is-small is-left">
                       <i class="fa fa-user"></i>
-                    </span>
-                  </p>
-                  
-                </div>
-                  <div class="field">
-                  <label class="label">Email</label>
-                  <p class="control has-icons-left has-icons-right">
-                    <input class="input is-success" type="Email" required placeholder="Email" name="Email" value="">
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-envelope"></i>
-                    </span>
-                  </p>
-                  
-                </div>
-                  <div class="field">
-                  <label class="label">Password</label>
-                  <p class="control has-icons-left has-icons-right">
-                    <input class="input is-success" type="Password" required placeholder="Password" name="Password" value="">
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-envelope"></i>
                     </span>
                   </p>
                   
@@ -71,7 +50,6 @@
               <p class="control">
                 <span class="select">
                   <select name="CityId" required>
-                      <option value=""></option>
                       <?php
                       foreach ($cities as $city) {
                         echo '<option value='.$city->idcity.'>'.$city->cityname.'</option>';
@@ -81,6 +59,7 @@
                 </span>
               </p>
             </div>
+                  <input type="hidden" name="id" value="<?php echo $res[0]->idresurant;?>">
               <div class="field is-grouped">
                 <p class="control">
             <button class="button is-primary">Submit</button>
@@ -88,8 +67,7 @@
         </div>  
               </div>
          </form>
-                    </div>
-            
+           
         </div>
       </div>
       <!-- Hero footer: will stick at the bottom -->
