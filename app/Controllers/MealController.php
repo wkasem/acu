@@ -19,4 +19,20 @@ class MealController extends Controller
         $cat = Category::all();
         return $this->view('public.Views.addmeal' , compact('cat'));
     }
+    public function addmealto()
+    {
+        
+        Meal::create([
+            'name'        => $_POST['name'],
+            'discription'       => $_POST['description'],
+            'price'    => $_POST['price'],
+            'categoreid' => $_POST['category'],
+            'extra'     => $_POST['extra'],
+        ]);
+        echo'asd';
+//        
+//        $cat = Category::all();
+//        return $this->view('public.Views.addmeal' , compact('cat'));
+//        
+    }
 }

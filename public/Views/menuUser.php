@@ -14,9 +14,11 @@
       <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
+            <form>
             <table class="table">
           <thead>
             <tr>
+              <th>Chose</th>
               <th>Name</th>
 
               <th> Description</th>
@@ -28,6 +30,7 @@
           </thead>
             <tfoot>
                 <tr>
+                  <th>Chose</th>
                   <th>Name</th>
 
                   <th> Description</th>
@@ -41,9 +44,15 @@
      <tbody>
       
         <?php
+    $i=0;
                   foreach($Menu as $m)
                   {
                       echo '<tr>';
+                      echo '<th><div class="field">
+  <p class="control">
+      <input type="checkbox" name ="'.$i.'" value="'.$m->idmeal.'">
+  </p>
+</div></th>';
                       echo '<th>'.$m->name.'</th>';
                       echo '<th>'.$m->discription.'</th>';
                       echo '<th>'.$m->price.'</th>';
@@ -59,10 +68,10 @@
                       echo '</tr>';
                   }
                   ?>
-       
                 </tbody>
             </table>
-          </div>  
+       </form>
+                </div>  
       </div>
         
         

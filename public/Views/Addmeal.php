@@ -71,7 +71,6 @@
     <button class="button is-primary">Add Meal</button>
   </p>
 </div>
-            
         </div>
       </div>
         </form>

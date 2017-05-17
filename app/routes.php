@@ -10,7 +10,6 @@ $router->get('/signup' , ['controller' => 'userController' , 'func' => 'showSign
 $router->get('/orders' , ['controller' => 'userController' , 'func' => 'showOrders']);
 $router->get('/users' , ['controller' => 'DashBoardController' , 'func' => 'ShowUsers']);
 $router->post('/signup' , ['controller' => 'userController' , 'func' => 'signup']);
-
 $router->get('/login' , ['controller' => 'userController' , 'func' => 'showLogin']);
 $router->get('/logout' , ['controller' => 'userController' , 'func' => 'logout']);
 $router->post('/login' , ['controller' => 'userController' , 'func' => 'login']);
@@ -21,11 +20,10 @@ $router->get('/editres',['controller' => 'restaurantsController' , 'func' => 'ed
 $router->get('/addrest',['controller' => 'restaurantsController' , 'func' => 'showaddresturant']);
 $router->post('/editres',['controller' => 'restaurantsController' , 'func' => 'updateresturant']);
 $router->post('/addrest',['controller' => 'restaurantsController' , 'func' => 'addresturant']);
-
 $router->get('/menu',['controller' => 'MenuController', 'func'=> 'ShowMenu'] );
 $router->get('/addmeal',['controller' => 'MealController', 'func'=> 'addmeal']);
+$router->post('/addmeal',['controller' => 'MealController', 'func'=> 'addmealto']);
 $router->post('/addcat',['controller' => 'CategoryController', 'func'=> 'addcat']);
-
 //ajax
 $router->post('/getCities',['controller' => 'userController' , 'func' => 'getCities']);
 $router->post('/getRes',['controller' => 'userController' , 'func' => 'getRes']);

@@ -47,7 +47,7 @@
            });
            
            $('#menue button').click(function(){
-              window.location = 'orders/' + $('#res').val(); 
+              window.location = 'menu?id=' + $('#res').val(); 
            });
        })
       </script>
