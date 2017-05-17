@@ -37,10 +37,15 @@
                 .done((data) => {
                    $('#res').empty().parent().show();
                    $(this).parent().removeClass('is-loading');
+                   $('#menue').show();
                    data.forEach(function(c){
                       $('#res').append(`<option value='${c.idresurant}'>${c.nameresturant}</option>`); 
                    });
                });
+           });
+           
+           $('#menue button').click(function(){
+              window.location = 'orders/' + $('#res').val(); 
            });
        })
       </script>
@@ -77,6 +82,9 @@
                 <span class="select is-medium " style="display:none">
                   <select id="res"></select>
                 </span>
+              </p>
+             <p class="control" id="menue" style="display:none">
+                <button class="button is-medium is-success">Show Menue</button>
               </p>
            </div>
 
