@@ -2,6 +2,8 @@
 require 'Controller.php';
 require __DIR__.'/../Models/City.php';
 require __DIR__.'/../Models/User.php';
+require __DIR__.'/../Models/Country.php';
+require __DIR__.'/../Models/Restaurant.php';
 require_once __DIR__.'/../Modules/Auth.php';
 require_once __DIR__.'/../Modules/helpers.php';
 
@@ -39,7 +41,9 @@ class userController extends Controller
     
     public function showOrders()
     {
-        return $this->view('public.Views.orders');
+        $countries = Country::all();
+        
+        return $this->view('public.Views.orders' , compact('countries'));
     }
     
     public function login()
@@ -53,6 +57,34 @@ class userController extends Controller
             'role' => $_GET['role']
         ]);
         redirect('users');
+    }
+    
+    public function getCities()
+    {
+        
+       header("Content-type: application/json");
+        
+       $c =  City::find([
+            'countryid' => $_POST['id']
+        ]);
+        
+        sleep(2);
+        
+        echo json_encode($c);
+    }
+    
+    public function getRes()
+    {
+        
+       header("Content-type: application/json");
+        
+       $c =  Restaurant::find([
+            'cityidresturant' => $_POST['id']
+        ]);
+        
+        sleep(2);
+        
+        echo json_encode($c);
     }
 
 

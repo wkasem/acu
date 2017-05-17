@@ -48,7 +48,7 @@ class Router
 
       $m = $this->currentROUTE['options']['func'];
 
-      $s->$m();
+      return $s->$m();
     }
 
   }
