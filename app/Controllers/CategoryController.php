@@ -10,5 +10,6 @@ class CategoryController extends Controller
     {
         Category::create(['name' => $_POST['name']]);
         redirect('addmeal?id='.$_POST['id']);
+        
     }
 }

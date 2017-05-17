@@ -22,7 +22,7 @@ $router->get('/addrest',['controller' => 'restaurantsController' , 'func' => 'sh
 $router->post('/editres',['controller' => 'restaurantsController' , 'func' => 'updateresturant']);
 $router->post('/addrest',['controller' => 'restaurantsController' , 'func' => 'addresturant']);
 
-$router->get('/menuadmin',['controller' => 'MenuController', 'func'=> 'ShowMenu'] );
+$router->get('/menu',['controller' => 'MenuController', 'func'=> 'ShowMenu'] );
 $router->get('/addmeal',['controller' => 'MealController', 'func'=> 'addmeal']);
 $router->post('/addcat',['controller' => 'CategoryController', 'func'=> 'addcat']);
 

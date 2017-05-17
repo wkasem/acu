@@ -36,9 +36,11 @@
                $.post('getRes' , {id : id})
                 .done((data) => {
                    $('#res').empty().parent().show();
+                   $('#ress').empty().parent().show();
                    $(this).parent().removeClass('is-loading');
                    data.forEach(function(c){
-                      $('#res').append(`<option value='${c.idresurant}'>${c.nameresturant}</option>`); 
+                      $('#res').append(`<option value='${c.idresurant}'><a>${c.nameresturant}</a></option>`);
+                       
                    });
                });
            });
@@ -77,6 +79,8 @@
                 <span class="select is-medium " style="display:none">
                   <select id="res"></select>
                 </span>
+              </p><p class="control" style="display:none">
+                  
               </p>
            </div>
 

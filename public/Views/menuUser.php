@@ -11,7 +11,6 @@
     <section class="hero is-warning is-bold is-fullheight">
       <!-- Hero header: will stick at the top -->
       <?php include('includes/header.php') ?>
-
       <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
@@ -63,9 +62,6 @@
        
                 </tbody>
             </table>
-            <?php
-            $w = $_GET['id'];
-            echo '<a href="addmeal?id='.$w.'" class="button is-success">Add meal</a>';?>
           </div>  
       </div>
         

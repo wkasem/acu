@@ -50,7 +50,7 @@
                       echo '<th>'.$restu->cityname.'</th>';
                       echo '<th><a href="/acu/editres?id='.$restu->idresurant.'" class="button is-success">Edit</a>
                       <a href="/acu/deleteres?id='.$restu->idresurant.'" class="button is-success">Delete</a>
-                      <a href="/acu/menuadmin?id='.$restu->idresurant.'" class="button is-success">Menu</a>
+                      <a href="/acu/menu?idd=1&id='.$restu->idresurant.'" class="button is-success">Menu</a>
                       </th>';
                       echo '</tr>';
                   }
