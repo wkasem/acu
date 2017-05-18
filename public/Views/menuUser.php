@@ -14,7 +14,7 @@
       <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
-            <form>
+            <form action="menu" method="POST">
             <table class="table">
           <thead>
             <tr>
@@ -25,7 +25,6 @@
               <th> Price</th>
               <th> Category</th>
               <th> type</th>
-
             </tr>
           </thead>
             <tfoot>
@@ -66,10 +65,16 @@
                           echo '<th>Meal</th>';
                       }
                       echo '</tr>';
+                      
                   }
                   ?>
                 </tbody>
             </table>
+                <div class="field is-grouped">
+  <p class="control">
+    <button class="button is-primary">Order</button>
+  </p>
+</div>
        </form>
                 </div>  
       </div>

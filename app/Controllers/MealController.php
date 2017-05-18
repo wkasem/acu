@@ -29,10 +29,29 @@ class MealController extends Controller
             'categoreid' => $_POST['category'],
             'extra'     => $_POST['extra'],
         ]);
-        echo'asd';
-//        
-//        $cat = Category::all();
-//        return $this->view('public.Views.addmeal' , compact('cat'));
-//        
+        
+//        Meal::create([
+//            'name'        => $_POST['name'],
+//            'discription'       => $_POST['description'],
+//            'price'    => $_POST['price'],
+//            'categoreid' => $_POST['category'],
+//            'extra'     => $_POST['extra'],
+//        ]);
+        $m = Meal::find([
+            
+            'name'        => $_POST['name'],
+            'discription'       => $_POST['description'],
+            'price'    => $_POST['price'],
+            'categoreid' => $_POST['category'],
+            'extra'     => $_POST['extra'],
+        ]);
+//        echo $_POST['idd'];
+        Menu::create([
+            'resurantid' => $_POST['idd'],
+            'mealid' => $m[0]->idmeal,
+        ]);
+        
+//        echo 'Done';
+        redirect('menu?id='.$_POST['idd']);
     }
 }

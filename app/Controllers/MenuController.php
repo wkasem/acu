@@ -18,4 +18,15 @@ class MenuController extends Controller
        }
         
     }
+    public function requestorder()
+    {
+        $i = 0 ; 
+        while(isset($_POST[$i]))
+        {
+            echo $_POST[$i];
+            echo "Done";
+            $i++;
+        }
+        
+    }
 }

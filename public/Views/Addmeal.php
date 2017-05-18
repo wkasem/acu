@@ -50,7 +50,9 @@
         </select>
     </span>
   </p>
-</div><div class="field is-horizontal">
+</div>
+            <input name="idd" value="<?php echo $_GET['id'];?>" type="hidden">
+            <div class="field is-horizontal">
                   <div class="field-label">
                     <label class="label">Extra</label>
                   </div>
