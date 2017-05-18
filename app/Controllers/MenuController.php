@@ -21,12 +21,16 @@ class MenuController extends Controller
     public function requestorder()
     {
         $i = 0 ; 
-        while(isset($_POST[$i]))
+        while($i<$_POST['size'])
         {
-            echo $_POST[$i];
-            echo "Done";
-            $i++;
+            if(isset($_POST[$i]))
+            {
+               Menu::create([
+                   'resurantid' => $_POST['resid'];
+                   'mealid' => $_POST[$i];
+               ]);
+            }
         }
-        
+        redirect('hisusers']);
     }
 }

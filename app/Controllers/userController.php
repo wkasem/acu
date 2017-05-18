@@ -48,7 +48,6 @@ class userController extends Controller
     
     public function login()
     {
-        
         return Auth::login($_POST);
     }
     public function EditUser()

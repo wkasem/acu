@@ -31,6 +31,13 @@ class restaurantsController extends Controller
         
         
         Restaurant::delete(['idresurant' => $_POST['id']]);
+        
+        Restaurant::create([
+            'nameresturant'        => $_POST['Name'],
+            'phonenumberresturant' => $_POST['PhoneNumber'],
+            'address'              => $_POST['Address'],
+            'cityidresturant'      => $_POST['CityId'],
+        ]);   
         redirect('restaurants');
 //        User::update($_GET['id'] ,[
 //            'role' => $_GET['role']

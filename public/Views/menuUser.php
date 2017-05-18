@@ -44,6 +44,7 @@
       
         <?php
     $i=0;
+        
                   foreach($Menu as $m)
                   {
                       echo '<tr>';
@@ -65,11 +66,13 @@
                           echo '<th>Meal</th>';
                       }
                       echo '</tr>';
-                      
+                    $i++;  
                   }
+        <?php echo '<input name="size" type="hidden" value="'.$i.'">';?>
                   ?>
                 </tbody>
             </table>
+                <?php echo '<input name="resid" type="hidden" value="'.$_GET['id'].'">';?>
                 <div class="field is-grouped">
   <p class="control">
     <button class="button is-primary">Order</button>
